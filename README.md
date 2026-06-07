@@ -44,6 +44,8 @@ Adds source file and sheet name columns for traceability.
 merge_excel_files(input_folder="sample_input", output_path="merged_output.xlsx")
 ```
 
+![Merge Sheets Screenshot](01_merge_sheets/screenshot.png)
+
 ---
 
 ## 02 — Auto Report
@@ -74,6 +76,8 @@ filters = {
 filter_and_export("sample_input/employee_data.xlsx", "filtered_output.xlsx", filters)
 ```
 
+![Filter Export Screenshot](03_filter_export/screenshot.png)
+
 ---
 
 ## 04 — Duplicate Remover
@@ -88,6 +92,8 @@ remove_duplicates(
     keep="first"
 )
 ```
+
+![Duplicate Remover Screenshot](04_duplicate_remover/screenshot.png)
 
 ---
 
