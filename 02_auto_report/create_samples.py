@@ -1,11 +1,11 @@
 import pandas as pd
 
 df = pd.DataFrame({
-    "產品名稱": ["鍵盤", "滑鼠", "螢幕", "耳機", "網路攝影機"],
-    "銷售數量": [120, 340, 85, 210, 95],
-    "單價": [1200, 450, 8900, 1500, 2200],
-    "銷售金額": [144000, 153000, 756500, 315000, 209000]
+    "Product": ["Keyboard", "Mouse", "Monitor", "Headset", "Webcam"],
+    "Quantity Sold": [120, 340, 85, 210, 95],
+    "Unit Price": [1200, 450, 8900, 1500, 2200],
+    "Total Sales": [144000, 153000, 756500, 315000, 209000]
 })
 
-df.to_excel("sample_input/資料.xlsx", index=False)
-print("測試檔案建立完成！")
+df.to_excel("sample_input/data.xlsx", index=False)
+print("Sample file created!")

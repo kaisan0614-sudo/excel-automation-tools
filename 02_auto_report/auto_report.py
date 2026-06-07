@@ -11,10 +11,10 @@ def generate_report(input_path, output_path):
     for col in df.select_dtypes(include="number").columns:
         totals[col] = df[col].sum()
     total_row = {col: totals.get(col, "") for col in df.columns}
-    total_row[df.columns[0]] = "合計"
+    total_row[df.columns[0]] = "Total"
     df = pd.concat([df, pd.DataFrame([total_row])], ignore_index=True)
 
-    df.to_excel(output_path, index=False, sheet_name="報表")
+    df.to_excel(output_path, index=False, sheet_name="Report")
 
     # 套用樣式
     wb = load_workbook(output_path)
@@ -55,9 +55,9 @@ def generate_report(input_path, output_path):
     ws.row_dimensions[1].height = 30
 
     wb.save(output_path)
-    print(f"完成！報表已輸出 → {output_path}")
+    print(f"Done! Report saved → {output_path}")
 
 if __name__ == "__main__":
-    input_path = "sample_input/資料.xlsx"
+    input_path = "sample_input/data.xlsx"
     output_path = "report_output.xlsx"
     generate_report(input_path, output_path)

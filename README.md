@@ -54,8 +54,10 @@ Reads raw data and outputs a formatted Excel report with:
 - Uniform borders and column widths
 
 ```python
-generate_report(input_path="sample_input/資料.xlsx", output_path="report_output.xlsx")
+generate_report(input_path="sample_input/data.xlsx", output_path="report_output.xlsx")
 ```
+
+![Auto Report Screenshot](02_auto_report/screenshot.png)
 
 ---
 
@@ -66,10 +68,10 @@ Supports `==`, `>=`, `<=`, `>`, `<`, and list matching.
 
 ```python
 filters = {
-    "部門": ["工程", "業務"],
-    "薪資": {"op": ">=", "value": 45000}
+    "Department": ["Engineering", "Sales"],
+    "Salary": {"op": ">=", "value": 45000}
 }
-filter_and_export("sample_input/員工資料.xlsx", "filtered_output.xlsx", filters)
+filter_and_export("sample_input/employee_data.xlsx", "filtered_output.xlsx", filters)
 ```
 
 ---
@@ -80,9 +82,9 @@ Detects and removes duplicate rows. Configurable by subset of columns.
 
 ```python
 remove_duplicates(
-    input_path="sample_input/資料.xlsx",
+    input_path="sample_input/data.xlsx",
     output_path="cleaned_output.xlsx",
-    subset=None,    # None = all columns, or specify e.g. ["姓名", "部門"]
+    subset=None,    # None = all columns, or specify e.g. ["Name", "Department"]
     keep="first"
 )
 ```
