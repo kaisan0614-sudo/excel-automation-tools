@@ -5,7 +5,7 @@ import os
 def merge_excel_files(input_folder, output_path):
     files = glob.glob(os.path.join(input_folder, "*.xlsx"))
     if not files:
-        print("找不到任何 .xlsx 檔案")
+        print("No .xlsx files found.")
         return
 
     frames = []
@@ -13,13 +13,13 @@ def merge_excel_files(input_folder, output_path):
         xl = pd.ExcelFile(file)
         for sheet in xl.sheet_names:
             df = xl.parse(sheet)
-            df["來源檔案"] = os.path.basename(file)
-            df["來源工作表"] = sheet
+            df["Source File"] = os.path.basename(file)
+            df["Source Sheet"] = sheet
             frames.append(df)
 
     result = pd.concat(frames, ignore_index=True)
     result.to_excel(output_path, index=False)
-    print(f"完成！合併 {len(frames)} 張工作表 → {output_path}")
+    print(f"Done! Merged {len(frames)} sheet(s) → {output_path}")
 
 if __name__ == "__main__":
     input_folder = "sample_input"

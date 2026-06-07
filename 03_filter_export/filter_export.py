@@ -6,7 +6,7 @@ def filter_and_export(input_path, output_path, filters):
 
     for col, condition in filters.items():
         if col not in result.columns:
-            print(f"欄位「{col}」不存在，略過")
+            print(f"Column '{col}' not found, skipping.")
             continue
 
         if isinstance(condition, dict):
@@ -28,11 +28,11 @@ def filter_and_export(input_path, output_path, filters):
             result = result[result[col] == condition]
 
     result.to_excel(output_path, index=False)
-    print(f"完成！篩選出 {len(result)} 筆資料 → {output_path}")
+    print(f"Done! {len(result)} row(s) matched → {output_path}")
 
 if __name__ == "__main__":
     filters = {
-        "部門": ["工程", "業務"],
-        "薪資": {"op": ">=", "value": 45000}
+        "Department": ["Engineering", "Sales"],
+        "Salary": {"op": ">=", "value": 45000}
     }
-    filter_and_export("sample_input/員工資料.xlsx", "filtered_output.xlsx", filters)
+    filter_and_export("sample_input/employee_data.xlsx", "filtered_output.xlsx", filters)

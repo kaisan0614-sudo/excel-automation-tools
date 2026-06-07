@@ -1,11 +1,11 @@
 import pandas as pd
 
 df = pd.DataFrame({
-    "姓名": ["王小明", "李小華", "張美玲", "陳大偉", "林小燕", "黃志豪", "吳雅婷", "劉俊宏"],
-    "部門": ["業務", "工程", "行政", "行銷", "工程", "業務", "行政", "工程"],
-    "職級": ["專員", "工程師", "專員", "專員", "資深工程師", "資深專員", "專員", "工程師"],
-    "薪資": [45000, 60000, 38000, 50000, 75000, 52000, 36000, 62000]
+    "Name": ["Alice Wang", "Bob Lee", "Carol Chang", "David Chen", "Eva Lin", "Frank Huang", "Grace Wu", "Henry Liu"],
+    "Department": ["Sales", "Engineering", "Admin", "Marketing", "Engineering", "Sales", "Admin", "Engineering"],
+    "Level": ["Associate", "Engineer", "Associate", "Associate", "Senior Engineer", "Senior Associate", "Associate", "Engineer"],
+    "Salary": [45000, 60000, 38000, 50000, 75000, 52000, 36000, 62000]
 })
 
-df.to_excel("sample_input/員工資料.xlsx", index=False)
-print("測試檔案建立完成！")
+df.to_excel("sample_input/employee_data.xlsx", index=False)
+print("Sample file created!")
